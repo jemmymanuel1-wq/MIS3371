@@ -3,11 +3,26 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patient Registration Form</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+     <div id="banner">
 
+        <h1>ABC Medical Patient Portal</h1>
+
+        <p id="date"></p>
+
+    </div>
+
+    <script>
+        const today = new Date();
+        document.getElementById("date").innerHTML =
+            "Today is: " + today.toDateString();
+    </script>
 </body>
 
 </html>
