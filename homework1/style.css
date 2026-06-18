@@ -35,15 +35,22 @@ h1 {
 
 /* General form spacing (we'll use later) */
 table {
-    width: 90%;
-    margin: 20px auto;
-    background-color: white;
-    padding: 10px;
+  width: 90%;
+  margin: 20px auto;
+  background-color: white;
+  padding: 10px;
+  border-collapse: separate;
+  border-spacing: 10px;
 }
 
 /* Inputs styling */
 input, select, textarea {
-    width: 95%;
+    width: 100%;
     padding: 6px;
-    margin: 5px 0;
+    box-sizing: border-box;
+}
+
+td {
+  padding: 6px;
+  vertical-align: top;
 }
