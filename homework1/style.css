@@ -35,11 +35,9 @@ h1 {
 
 /* General form spacing (we'll use later) */
 table {
-  width: 95%;
-  max-width:900px;
-  margin: 20px auto;
-  background-color: white;
-  border-collapse: collapse;
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
 }
 
 /* Inputs styling */
@@ -50,21 +48,28 @@ input, select, textarea {
 }
 
 td {
-  padding: 8px;
-  vertical-align: middle;
-  white-space: normal;
+    padding: 6px;
+    vertical-align: middle;
 }
 
 td:first-child,
 td:nth-child(3) {
+    width: 180px;
     font-weight: bold;
-    white-space: left;
-    padding-right: 2px;
+    text-align: left;
+}
+
+td:nth-child(2),
+td:nth-child(4) {
+    width: 220px;
 }
 
 input[type="text"],
 input[type="password"],
 input[type="email"],
 select {
-  width: 200px;
+  width: 180px;
+}
+textarea {
+  width: 400px;
 }
