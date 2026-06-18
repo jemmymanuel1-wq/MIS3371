@@ -35,11 +35,10 @@ h1 {
 
 /* General form spacing (we'll use later) */
 table {
-  width: 80%;
+  width: auto;
   margin: 20px auto;
   background-color: white;
   border-collapse: collapse;
-  table-layout: fixed;
 }
 
 /* Inputs styling */
@@ -55,16 +54,11 @@ td {
   white-space: normal;
 }
 
-td:first-child {
-  width: 25%;
-  text-align: right;
-  font-weight: bold;
-  padding-right: 10px;
-}
-
-td:nth-child(2),
-td:nth-child(4) {
-  width: 25%;
+td:first-child,
+td:nth-child(3) {
+    font-weight: bold;
+    white-space: nowrap;
+    padding-right: 8px;
 }
 
 input[type="text"],
