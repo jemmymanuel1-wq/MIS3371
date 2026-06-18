@@ -38,21 +38,33 @@ table {
   width: 80%;
   margin: 20px auto;
   background-color: white;
-  border-collapse: separate;
-  border-spacing: 12px 10px;
+  border-collapse: collapse;
+  table-layout: fixed;
 }
 
 /* Inputs styling */
 input, select, textarea {
-    width: auto;
+    width: 100%;
     padding: 6px;
     box-sizing: border-box;
 }
 
 td {
-  padding: 5px;
+  padding: 8px;
   vertical-align: middle;
-  white-space: nowrap;
+  white-space: normal;
+}
+
+td:first-child {
+  width: 25%;
+  text-align: right;
+  font-weight: bold;
+  padding-right: 10px;
+}
+
+td:nth-child(2),
+td:nth-child(4) {
+  width: 25%;
 }
 
 input[type="text"],
