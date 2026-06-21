@@ -22,13 +22,15 @@ Description: Patient registration form for John's Medical Patient Portal.
 <body>
      <div id="banner">
 
+         <img src="logo.png" alt="John's Medical Center Logo" width="100">
+
         <h1>John's Medical Patient Portal</h1>
 
         <p id="date"></p>
 
     </div>
 
-    <form>
+    <form action= "thankyou.html">
 
 <table>
 
@@ -214,8 +216,17 @@ Description: Patient registration form for John's Medical Patient Portal.
 </table>
 
 </form>
+</div>
 
     <script>
+
+        <div id="footer">
+
+    <button type="button">Contact Us</button>
+
+    <p>© 2026 John's Medical Center</p>
+
+</div>
         const today = new Date();
         document.getElementById("date").innerHTML =
             "Today is: " + today.toDateString();
