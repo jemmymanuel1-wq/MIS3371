@@ -13,6 +13,12 @@ body{
   paddings: 0;
 }
 
+#content {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
 /* Banner styling */
 #banner {
     background-color: #0b3d91;
@@ -40,15 +46,10 @@ table {
     border-collapse: collapse;
 }
 
-/* Inputs styling */
-input, select, textarea {
-    width: 100%;
-    padding: 6px;
-    box-sizing: border-box;
-}
+
 
 td {
-    padding: 6px;
+    padding: 10px;
     vertical-align: middle;
 }
 
@@ -64,12 +65,10 @@ td:nth-child(4) {
     width: 220px;
 }
 
-input[type="text"],
-input[type="password"],
-input[type="email"],
-select {
-  width: 180px;
-}
+input,
+select,
 textarea {
-  width: 400px;
+    padding: 6px;
+    box-sizing: border-box;
 }
+
