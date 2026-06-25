@@ -14,7 +14,8 @@ function reviewForm() {
     const first = document.getElementById("firstname").value;
     const last = document.getElementById("lastname").value;
     const email = document.getElementById("email").value;
-    const phone = document.getElementById("phone").value;
+    const phoneElement = document.getElementById("phone");
+const phone = phoneElement ? phoneElement.value : "";
 
     // STEP 2: Display them inside reviewOutput div
     document.getElementById("reviewOutput").innerHTML =
