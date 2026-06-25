@@ -36,15 +36,15 @@ Description: Patient registration form for John's Medical Patient Portal.
 
     <tr>
         <td>First Name:</td>
-        <td><input type="text" maxlength="30"></td>
+        <td><input type="text" maxlength="30" title="Enter first name (letters only, max 30 characters)"></td>
 
         <td>Middle Initial:</td>
-        <td><input type="text" maxlength="1"></td>
+        <td><input type="text" maxlength="1" title="Middle initial (1 letter only)"></td>
     </tr>
 
     <tr>
         <td>Last Name:</td>
-        <td><input type="text" maxlength="30"></td>
+        <td><input type="text" maxlength="30" title="Enter last name (letters only, max 30 characters)"></td>
 
         <td></td>
         <td></td>
@@ -52,7 +52,7 @@ Description: Patient registration form for John's Medical Patient Portal.
 
 <tr>
     <td>Date of Birth (MM/DD/YYYY):</td>
-    <td><input type="text" placeholder="MM/DD/YYYY" maxlength="10"></td>
+    <input type="text" placeholder="MM/DD/YYYY" maxlength="10" title="Enter date in MM/DD/YYYY format">
 
     <td>SSN:</td>
     <td><input type="password" maxlength="11"></td>
@@ -137,10 +137,10 @@ Description: Patient registration form for John's Medical Patient Portal.
 
     <tr>
     <td>Email:</td>
-    <td><input type="email" placeholder="name@example.com"></td>
+   <input type="email" id="email" placeholder="name@example.com" title="Enter valid email">
 
     <td>User ID:</td>
-    <td><input type="text" maxlength="20"></td>
+    <input type="text" id="userid" maxlength="20" title="5–30 chars, no spaces, letters/numbers/_/- only">
 </tr>
 <tr>
     <td>Phone Number:</td>
@@ -204,10 +204,10 @@ Description: Patient registration form for John's Medical Patient Portal.
 
     <tr>
     <td>Password:</td>
-    <td><input type="password" maxlength="20"></td>
+    <input type="password" id="password" maxlength="20" title="8–30 chars, 1 uppercase, 1 number, 1 special character">
 
     <td>Confirm Password:</td>
-    <td><input type="password" maxlength="20"></td>
+    <input type="password" id="confirmPassword" maxlength="20" title="Must match password">
 </tr>
 
     <tr>
