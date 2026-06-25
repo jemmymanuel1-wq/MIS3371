@@ -1,1 +1,236 @@
+<!--
+Program Name: index.html
+Author: Jemimah Emmanuel
+Date Created: June 2026
+Date Last Edited: 21 June 2026
+Version: 1.0
+Description: Patient registration form for John's Medical Patient Portal.
+-->
 
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Registration Form</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+     <div id="banner">
+
+         <img src="logo.png" alt="John's Medical Center Logo" width="100">
+
+        <h1>John's Medical Patient Portal</h1>
+
+        <p id="date"></p>
+
+    </div>
+
+    <form action= "thankyou.html">
+
+<table>
+
+    <tr>
+        <td>First Name:</td>
+        <td><input type="text" maxlength="30"></td>
+
+        <td>Middle Initial:</td>
+        <td><input type="text" maxlength="1"></td>
+    </tr>
+
+    <tr>
+        <td>Last Name:</td>
+        <td><input type="text" maxlength="30"></td>
+
+        <td></td>
+        <td></td>
+    </tr>
+
+<tr>
+    <td>Date of Birth (MM/DD/YYYY):</td>
+    <td><input type="text" placeholder="MM/DD/YYYY" maxlength="10"></td>
+
+    <td>SSN:</td>
+    <td><input type="password" maxlength="11"></td>
+</tr>
+
+    <tr>
+    <td>Address Line 1:</td>
+    <td><input type="text" maxlength="30"></td>
+
+    <td>Address Line 2:</td>
+    <td><input type="text" maxlength="30"></td>
+</tr>
+
+<tr>
+    <td>City:</td>
+    <td><input type="text" maxlength="30"></td>
+
+    <td>State:</td>
+    <td>
+        <select>
+            <option>Alabama</option>
+            <option>Alaska</option>
+            <option>Arizona</option>
+            <option>Arkansas</option>
+            <option>California</option>
+            <option>Colorado</option>
+            <option>Connecticut</option>
+            <option>Delaware</option>
+            <option>Florida</option>
+            <option>Georgia</option>
+            <option>Hawaii</option>
+            <option>Idaho</option>
+            <option>Illinois</option>
+            <option>Indiana</option>
+            <option>Iowa</option>
+            <option>Kansas</option>
+            <option>Kentucky</option>
+            <option>Louisiana</option>
+            <option>Maine</option>
+            <option>Maryland</option>
+            <option>Massachusetts</option>
+            <option>Michigan</option>
+            <option>Minnesota</option>
+            <option>Mississippi</option>
+            <option>Missouri</option>
+            <option>Montana</option>
+            <option>Nebraska</option>
+            <option>Nevada</option>
+            <option>New Hampshire</option>
+            <option>New Jersey</option>
+            <option>New Mexico</option>
+            <option>New York</option>
+            <option>North Carolina</option>
+            <option>North Dakota</option>
+            <option>Ohio</option>
+            <option>Oklahoma</option>
+            <option>Oregon</option>
+            <option>Pennsylvania</option>
+            <option>Rhode Island</option>
+            <option>South Carolina</option>
+            <option>South Dakota</option>
+            <option>Tennessee</option>
+            <option>Texas</option>
+            <option>Utah</option>
+            <option>Vermont</option>
+            <option>Virginia</option>
+            <option>Washington</option>
+            <option>West Virginia</option>
+            <option>Wisconsin</option>
+            <option>Wyoming</option>
+        </select>
+    </td>
+</tr>
+
+<tr>
+    <td>Zip Code:</td>
+    <td><input type="text" maxlength="10"></td>
+
+    <td></td>
+    <td></td>
+</tr>
+
+    <tr>
+    <td>Email:</td>
+    <td><input type="email" placeholder="name@example.com"></td>
+
+    <td>User ID:</td>
+    <td><input type="text" maxlength="20"></td>
+</tr>
+
+    <tr>
+    <td>Symptoms / Description:</td>
+    <td colspan="3">
+        <textarea rows="4" cols="50" placeholder="Describe your symptoms here..."></textarea>
+    </td>
+</tr>
+
+    <tr>
+    <td>Medical History (Check all that apply):</td>
+    <td colspan="3">
+
+        <input type="checkbox" name="history"> Diabetes<br>
+        <input type="checkbox" name="history"> High Blood Pressure<br>
+        <input type="checkbox" name="history"> Asthma<br>
+        <input type="checkbox" name="history"> Heart Disease<br>
+        <input type="checkbox" name="history"> Allergies<br>
+
+    </td>
+</tr>
+
+    <tr>
+    <td>Gender:</td>
+    <td colspan="3">
+        <input type="radio" name="gender"> Male
+        <input type="radio" name="gender"> Female
+        <input type="radio" name="gender"> Other
+    </td>
+</tr>
+
+<tr>
+    <td>Vaccinated:</td>
+    <td colspan="3">
+        <input type="radio" name="vaccine"> Yes
+        <input type="radio" name="vaccine"> No
+    </td>
+</tr>
+
+<tr>
+    <td>Do you have insurance?</td>
+    <td colspan="3">
+        <input type="radio" name="insurance"> Yes
+        <input type="radio" name="insurance"> No
+    </td>
+</tr>
+
+    <tr>
+    <td>How would you rate your current health (1-10):</td>
+    <td colspan="3">
+        <input type="range" min="1" max="10" value="5">
+    </td>
+</tr>
+
+    <tr>
+    <td>Password:</td>
+    <td><input type="password" maxlength="20"></td>
+
+    <td>Confirm Password:</td>
+    <td><input type="password" maxlength="20"></td>
+</tr>
+
+    <tr>
+    <td colspan="4" style="text-align:center; padding-top:10px;">
+
+        <input type="reset" value="CLEAR AND START OVER">
+
+        <input type="submit" value="SUBMIT">
+
+    </td>
+</tr>
+    
+</table>
+
+</form>
+</div>
+
+    <script>
+
+        <div id="footer">
+
+    <button type="button">Contact Us</button>
+
+    <p>© 2026 John's Medical Center</p>
+
+</div>
+        const today = new Date();
+        document.getElementById("date").innerHTML =
+            "Today is: " + today.toDateString();
+    </script>
+</body>
+
+</html>
