@@ -1,12 +1,12 @@
 
-window.onload = function () {
+document.addEventListener("DOMContentLoaded", function () {
 
     const today = new Date();
 
     document.getElementById("date").innerHTML =
         "Today is: " + today.toDateString();
 
-};
+});
 
 function reviewForm() {
 
