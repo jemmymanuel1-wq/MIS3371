@@ -10,6 +10,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function reviewForm() {
 
+alert("Review clicked"); 
+    
     const first = document.getElementById("firstname").value;
     const middle = document.getElementById("middle").value;
     const last = document.getElementById("lastname").value;
