@@ -37,19 +37,19 @@ Description: Patient registration form for John's Medical Patient Portal.
     <tr>
         <td>First Name:</td>
         <td>
-            <input type="text" id="firstName" name="firstName" maxlength="30" title="Enter your first name." required pattern="[A-Za-z'-]{1,30}">
+            <input type="text" id="firstName" maxlength="30" pattern="[A-Za-z'-]{1,30}" title="Enter first name (letters only, max 30 characters)" required>
         </td>
 
         <td>Middle Initial:</td>
         <td>
-            <input type="text" id="middleInitial" name="middleInitial" maxlength="1" title="Enter your middle initial.">
+            <input type="text" id="middleInitial" maxlength="1" pattern="[A-Za-z]" title="Middle initial (1 letter only)" required>
         </td>
     </tr>
 
     <tr>
         <td>Last Name:</td>
         <td>
-            <input type="text" id="lastName" name="lastName" maxlength="30" title="Enter your last name." required>
+            <input type="text" id="lastName" maxlength="30" pattern="[A-Za-z0-9'-]{1,30}" title="Enter last name (letters only, max 30 characters)" required>
         </td>
 
         <td></td>
@@ -59,35 +59,35 @@ Description: Patient registration form for John's Medical Patient Portal.
 <tr>
     <td>Date of Birth (MM/DD/YYYY):</td>
     <td>
-        <input type="date" id="dob" name="dob" title="Select your date of birth." required>
+        <input type="text" id="dob" placeholder="MM/DD/YYYY" maxlength="10" title="Enter date in MM/DD/YYYY format" required>
     </td>
 
     <td>SSN:</td>
     <td>
-        <input type="password" id="ssn" name="ssn" maxlength="11" title="Enter SSN (hidden field)" required>
+        <input type="password" id="ssn" maxlength="11" title="Enter your Social Security Number in the format XXX-XX-XXXX">
     </td>
 </tr>
     <tr>
     <td>Address Line 1:</td>
     <td>
-        <input type="text" id="address1" name="address1" maxlength="30" title="Enter address line 1" required>
+        <input type="text" id="address1" maxlength="30" required>
     </td>
 
     <td>Address Line 2:</td>
     <td>
-        <input type="text" id="address2" name="address2" maxlength="30" title="Enter address line 2 (optional)">
+        <input type="text" id="address2" maxlength="30" title="Apartment, suite, unit, or building number (optional)>
     </td>
 </tr>
 
 <tr>
     <td>City:</td>
     <td>
-        <input type="text" id="city" name="city" maxlength="30" title="Enter city" required>
+        <input type="text" id="city" maxlength="30" required>
     </td>
 
     <td>State:</td>
     <td>
-        <select id="state" name="state" required>
+        <select id="state" required title="Select your state of residence">
             <option value="">Select State</option>
             <option>Alabama</option>
             <option>Alaska</option>
@@ -146,7 +146,7 @@ Description: Patient registration form for John's Medical Patient Portal.
 <tr>
     <td>Zip Code:</td>
     <td>
-        <input type="text" id="zipCode" name="zipCode" maxlength="10" title="Enter ZIP or ZIP+4 format" required pattern="[0-9]{5}(-[0-9]{4})?">
+        <input type="text" id="zipCode" maxlength="10" required>
     </td>
 
     <td></td>
@@ -156,18 +156,18 @@ Description: Patient registration form for John's Medical Patient Portal.
     <tr>
     <td>Email:</td>
     <td>
-        <input type="email" id="email" name="email" placeholder="name@example.com" title="Enter valid email" required>
+        <input type="email" id="email" placeholder="name@example.com" pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" title="Enter a valid email address (example: name@example.com)" required>
     </td>
 
     <td>User ID:</td>
     <td>
-        <input type="text" id="userID" name="userID" maxlength="30" title="5–30 chars, no spaces, letters/numbers/_/- only" required>
+        <input type="text" id="userID" maxlength="20" pattern="^[A-Za-z][A-Za-z0-9_-]{4,29}$" title="Create a user ID using letters, numbers, underscores, or dashes. No spaces." required>
     </td>
 </tr>
 <tr>
     <td>Phone Number:</td>
     <td>
-        <input type="tel" id="phone" name="phone" placeholder="123-456-7890" title="Enter phone number" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+        <input type="tel" id="phone" placeholder="123-456-7890" required>
     </td>
     <td></td>
     <td></td>
@@ -175,7 +175,7 @@ Description: Patient registration form for John's Medical Patient Portal.
     <tr>
     <td>Symptoms / Description:</td>
     <td colspan="3">
-        <textarea id="symptoms" name="symptoms" rows="4" cols="50" placeholder="Describe symptoms" title="Optional symptom description"></textarea>
+        <textarea id="symptoms" rows="4" cols="50" placeholder="Describe your symptoms here..."></textarea>
     </td>
 </tr>
 
@@ -183,11 +183,11 @@ Description: Patient registration form for John's Medical Patient Portal.
     <td>Medical History (Check all that apply):</td>
     <td colspan="3">
 
-        <input type="checkbox" id="diabetes" name="history" value="Diabetes"> Diabetes<br>
-        <input type="checkbox" id="highBP" name="history" value="High Blood Pressure"> High Blood Pressure<br>
-        <input type="checkbox" id="asthma" name="history" value="Asthma"> Asthma<br>
-        <input type="checkbox" id="heartDisease" name="history" value="Heart Disease"> Heart Disease<br>
-        <input type="checkbox" id="allergies" name="history" value="Allergies"> Allergies<br>
+        <input type="checkbox" id="diabetes" name="history" value="Diabetes" title="Check if you have diabetes" > Diabetes<br>
+        <input type="checkbox" id="highBP" name="history" value="High Blood Pressure" title="Check if you have high blood pressure" > High Blood Pressure<br>
+        <input type="checkbox" id="asthma" name="history" value="Asthma" title="Check if you have asthma" > Asthma<br>
+        <input type="checkbox" id="heartDisease" name="history" value="Heart Disease" title="Check if you have heart disease" > Heart Disease<br>
+        <input type="checkbox" id="allergies" name="history" value="Allergies" title="Check if you have allergies" > Allergies<br>
 
     </td>
 </tr>
@@ -195,9 +195,9 @@ Description: Patient registration form for John's Medical Patient Portal.
     <tr>
     <td>Gender:</td>
     <td colspan="3">
-        <input type="radio" id="male" name="gender" value="Male"> Male
-        <input type="radio" id="female" name="gender" value="Female"> Female
-        <input type="radio" id="other" name="gender" value="Other"> Other
+        <input type="radio" id="male" name="gender" value="Male" title="Select Male" > Male
+        <input type="radio" id="female" name="gender" value="Female" title="Select Female" > Female
+        <input type="radio" id="other" name="gender" value="Other" title="Select Others" > Other
     </td>
 </tr>
 
@@ -220,19 +220,22 @@ Description: Patient registration form for John's Medical Patient Portal.
     <tr>
     <td>How would you rate your current health (1-10):</td>
     <td colspan="3">
-        <input type="range" id="healthRating" name="healthRating" min="1" max="10" value="5">
+        <input type="range" id="healthRating" min="1" max="10" value="5" title="Drag the slider to rate your current health from 1 to 10" >
     </td>
 </tr>
 
     <tr>
     <td>Password:</td>
     <td>
-        <input type="password" id="password" name="password" maxlength="30" title="Create password" required>
+        <input type="password" id="password" maxlength="20" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_\-+=<>.?/~`])[A-Za-z\d!@#$%^&*()_\-+=<>.?/~`]{8,30}$"
+ title="Password must be 8 to 30 characters and include uppercase, lowercase, a number, and a special character"
+ required>
     </td>
 
     <td>Confirm Password:</td>
     <td>
-        <input type="password" id="confirmPassword" name="confirmPassword" maxlength="30" title="Re-enter password" required>
+        <input type="password" id="confirmPassword" maxlength="20" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_\-+=<>.?/~`])[A-Za-z\d!@#$%^&*()_\-+=<>.?/~`]{8,30}$"
+ title="Re-enter your password exactly as entered above" required>
     </td>
 </tr>
     <tr>
