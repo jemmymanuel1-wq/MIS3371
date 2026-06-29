@@ -29,32 +29,24 @@ function reviewForm() {
     if (document.getElementById("heartDisease").checked) history += "Heart Disease ";
     if (document.getElementById("allergies").checked) history += "Allergies ";
 
+    
+    let pw1 = document.getElementById("password").value;
+    let pw2 = document.getElementById("confirmPassword").value;
+
+    let pwMessage = (pw1 === pw2)
+        ? "Passwords match"
+        : "Passwords do not match";
+
     document.getElementById("reviewOutput").innerHTML =
         "<h3>PLEASE REVIEW THIS INFORMATION</h3>" +
-
         "<p><strong>Name:</strong> " + first + " " + middle + " " + last + "</p>" +
         "<p><strong>Email:</strong> " + email + "</p>" +
         "<p><strong>Phone:</strong> " + phone + "</p>" +
         "<p><strong>User ID:</strong> " + userid + "</p>" +
-
         "<p><strong>Gender:</strong> " + (gender ? gender.value : "") + "</p>" +
         "<p><strong>Health Rating:</strong> " + health + "</p>" +
-        "<p><strong>Medical History:</strong> " + history + "</p>";
-}
+        "<p><strong>Medical History:</strong> " + history + "</p>" +
 
-function validatePasswords() {
-
-    let pw1 = document.getElementById("password").value;
-    let pw2 = document.getElementById("confirmPassword").value;
-
-    let message = "";
-
-    if (pw1 !== pw2) {
-        message = "ERROR: Passwords do not match";
-    } else {
-        message = "Passwords match ✔";
-    }
-
-    document.getElementById("reviewOutput").innerHTML +=
-        "<p><strong>Password Check:</strong> " + message + "</p>";
+        
+        "<p><strong>Password Check:</strong> " + pwMessage + "</p>";
 }
