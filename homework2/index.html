@@ -57,9 +57,9 @@ Description: Patient registration form for John's Medical Patient Portal.
     </tr>
 
 <tr>
-    <td>Date of Birth (MM/DD/YYYY):</td>
+    <td>Date of Birth:</td>
     <td>
-        <input type="text" id="dob" placeholder="MM/DD/YYYY" maxlength="10" title="Enter date in MM/DD/YYYY format" required>
+        <input type="date" id="dob" min="1906-01-01" max="2026-06-28" title="Select your date of birth" required>
     </td>
 
     <td>SSN:</td>
@@ -70,7 +70,7 @@ Description: Patient registration form for John's Medical Patient Portal.
     <tr>
     <td>Address Line 1:</td>
     <td>
-        <input type="text" id="address1" maxlength="30" required>
+        <input type="text" id="address1" minlength="2" maxlength="30" title="Enter your street address" required>
     </td>
 
     <td>Address Line 2:</td>
@@ -82,7 +82,7 @@ Description: Patient registration form for John's Medical Patient Portal.
 <tr>
     <td>City:</td>
     <td>
-        <input type="text" id="city" maxlength="30" required>
+        <input type="text" id="city" minlength="2" maxlength="30" title="Enter your city" required>
     </td>
 
     <td>State:</td>
@@ -146,7 +146,7 @@ Description: Patient registration form for John's Medical Patient Portal.
 <tr>
     <td>Zip Code:</td>
     <td>
-        <input type="text" id="zipCode" maxlength="10" required>
+        <input type="text" id="zipCode" maxlength="10" pattern="[0-9]{5}(-[0-9]{4})?" title="Enter a 5-digit ZIP code or ZIP+4" required>
     </td>
 
     <td></td>
@@ -167,7 +167,7 @@ Description: Patient registration form for John's Medical Patient Portal.
 <tr>
     <td>Phone Number:</td>
     <td>
-        <input type="tel" id="phone" placeholder="123-456-7890" required>
+        <input type="tel" id="phone" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Enter your phone number in the format 123-456-7890" required>
     </td>
     <td></td>
     <td></td>
