@@ -41,3 +41,20 @@ function reviewForm() {
         "<p><strong>Health Rating:</strong> " + health + "</p>" +
         "<p><strong>Medical History:</strong> " + history + "</p>";
 }
+
+function validatePasswords() {
+
+    let pw1 = document.getElementById("password").value;
+    let pw2 = document.getElementById("confirmPassword").value;
+
+    let message = "";
+
+    if (pw1 !== pw2) {
+        message = "ERROR: Passwords do not match";
+    } else {
+        message = "Passwords match ✔";
+    }
+
+    document.getElementById("reviewOutput").innerHTML +=
+        "<p><strong>Password Check:</strong> " + message + "</p>";
+}
