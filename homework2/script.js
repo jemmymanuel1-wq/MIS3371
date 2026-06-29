@@ -10,13 +10,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function reviewForm() {
 
-    const first = document.getElementById("firstName").value;
-    const middle = document.getElementById("middleInitial").value;
-    const last = document.getElementById("lastName").value;
+    function safeGet(id) {
+        let el = document.getElementById(id);
+        return el ? el.value : "MISSING FIELD: " + id;
+    }
 
-    const email = document.getElementById("email").value;
-    const phone = document.getElementById("phone").value;
-    const userid = document.getElementById("userID").value;
+    const first = safeGet("firstName");
+    const middle = safeGet("middleInitial");
+    const last = safeGet("lastName");
+
+    const email = safeGet("email");
+    const phone = safeGet("phone");
+    const userid = safeGet("userID");
 
     document.getElementById("reviewOutput").innerHTML =
         "<h3>PLEASE REVIEW THIS INFORMATION</h3>" +
