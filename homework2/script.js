@@ -10,15 +10,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function reviewForm() {
 
-
-    
-    const first = document.getElementById("firstname").value;
-    const middle = document.getElementById("middle").value;
-    const last = document.getElementById("lastname").value;
+    const first = document.getElementById("firstName").value;
+    const middle = document.getElementById("middleInitial").value;
+    const last = document.getElementById("lastName").value;
 
     const email = document.getElementById("email").value;
     const phone = document.getElementById("phone").value;
-    const userid = document.getElementById("userid").value;
+    const userid = document.getElementById("userID").value;
 
     document.getElementById("reviewOutput").innerHTML =
         "<h3>PLEASE REVIEW THIS INFORMATION</h3>" +
