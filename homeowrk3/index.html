@@ -305,7 +305,13 @@ Description: Patient registration form for John's Medical Patient Portal.
 <tr>
     <td>How would you rate your current health (1-10):</td>
     <td colspan="3">
-        <input type="range" id="healthRating" min="1" max="10" value="5" title="Drag the slider to rate your current health from 1 to 10" >
+        <input type="range" 
+            id="healthRating" 
+            min="1" 
+            max="10" 
+            value="5" 
+            title="Drag the slider to rate your current health from 1 to 10"
+            oninput="updateHealthValue">
     <span id="healthValue">5</span>
     </td>
 </tr>
