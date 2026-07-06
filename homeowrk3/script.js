@@ -161,6 +161,87 @@ function validateUserID() {
     clearError("userIDError");
     return true;
 }
+
+function validatePassword() {
+    let pw = document.getElementById("password").value;
+    let id = document.getElementById("userID").value;
+
+    let errors = [];
+
+    if (pw.length < 8) {
+        errors.push("At least 8 characters");
+    }
+
+    if (!/[A-Z]/.test(pw)) {
+        errors.push("1 uppercase letter");
+    }
+
+    if (!/[a-z]/.test(pw)) {
+        errors.push("1 lowercase letter");
+    }
+
+    if (!/[0-9]/.test(pw)) {
+        errors.push("1 number");
+    }
+
+    if (!/[!@#$%^&*()_\-+=<>.?/~`]/.test(pw)) {
+        errors.push("1 special character");
+    }
+
+    if (pw === id && id !== "") {
+        errors.push("Password cannot match User ID");
+    }
+
+    if (errors.length > 0) {
+        showError("passwordError", "Password needs: " + errors.join(", "));
+        return false;
+    }
+
+    clearError("passwordError");
+    return true;
+}
+
+function validateConfirmPassword() {
+    let pw1 = document.getElementById("password").value;
+    let pw2 = document.getElementById("confirmPassword").value;
+
+    if (pw2 === "") {
+        showError("confirmPasswordError", "Please confirm password.");
+        return false;
+    }
+
+    if (pw1 !== pw2) {
+        showError("confirmPasswordError", "Passwords do not match.");
+        return false;
+    }
+
+    clearError("confirmPasswordError");
+    return true;
+}
+
+function validateForm() {
+
+    let ok =
+        validateFirstName() &
+        validateLastName() &
+        validateMiddleInitial() &
+        validateDOB() &
+        validateSSN() &
+        validateUserID() &
+        validatePassword() &
+        validateConfirmPassword();
+
+    if (Object.keys(formErrors).length === 0) {
+        document.getElementById("submitBtn").style.display = "inline-block";
+        alert("All fields valid. You may now submit.");
+    } else {
+        document.getElementById("submitBtn").style.display = "none";
+        alert("Please fix errors before submitting.");
+    }
+
+    return ok;
+}
+
 function reviewForm() {
 
     let first = document.getElementById("firstName").value;
