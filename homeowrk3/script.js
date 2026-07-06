@@ -326,32 +326,33 @@ function validateAddress2() {
 
 function validateForm() {
 
-    let ok =
-        validateFirstName() &
-        validateLastName() &
-        validateMiddleInitial() &
-        validateDOB() &
-        validateSSN() &
-        validateUserID() &
-        validatePassword() &
-        validateConfirmPassword() &
-        validateAddress1() &
-        validateCity() &
-        validateZipCode() &
-        validateEmail() &
-        validatePhone() &
-        validateState() &
-        validateAddress2();
+    let ok = true;
 
-    if (Object.keys(formErrors).length === 0) {
-        document.getElementById("submitBtn").style.display = "inline-block";
-        alert("All fields valid. You may now submit.");
-    } else {
-        document.getElementById("submitBtn").style.display = "none";
-        alert("Please fix errors before submitting.");
-    }
+ok = validateFirstName() && ok;
+ok = validateMiddleInitial() && ok;
+ok = validateLastName() && ok;
+ok = validateDOB() && ok;
+ok = validateSSN() && ok;
+ok = validateAddress1() && ok;
+ok = validateAddress2() && ok;
+ok = validateCity() && ok;
+ok = validateState() && ok;
+ok = validateZipCode() && ok;
+ok = validateEmail() && ok;
+ok = validatePhone() && ok;
+ok = validateUserID() && ok;
+ok = validatePassword() && ok;
+ok = validateConfirmPassword() && ok;
 
-    return ok;
+    if (ok) {
+    document.getElementById("submitBtn").style.display = "inline-block";
+    alert("All fields valid. You may now submit.");
+} else {
+    document.getElementById("submitBtn").style.display = "none";
+    alert("Please fix the highlighted errors before submitting.");
+}
+
+return ok;
 }
 
 function reviewForm() {
