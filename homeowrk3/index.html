@@ -222,8 +222,8 @@ Description: Patient registration form for John's Medical Patient Portal.
     <td>
         <input type="text"
             id="zipCode" 
-            maxlength="10" 
-            pattern="[0-9]{5}(-[0-9]{4})?" 
+            maxlength="5" 
+            pattern="[0-9]{5}" 
             title="Enter a 5-digit ZIP code or ZIP+4" required
             oninput="validateZipCode()"
             onblur="validateZipCode()">
@@ -254,7 +254,7 @@ Description: Patient registration form for John's Medical Patient Portal.
         <input type="text" 
             id="userID" 
             maxlength="20" 
-            pattern="^[A-Za-z][A-Za-z0-9_-]{4,29}$" 
+            pattern="^[A-Za-z][A-Za-z0-9_-]{4,19}$" 
             title="Create a user ID using letters, numbers, underscores, or dashes. No spaces." required
             oninput="validateUserID() validatePassword()"
             onblur="validateUserID()">
@@ -345,7 +345,7 @@ Description: Patient registration form for John's Medical Patient Portal.
     <td>
         <input type="password" 
             id="password" 
-            maxlength="20" 
+            maxlength="30" 
             pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_\-+=<>.?/~`])[A-Za-z\d!@#$%^&*()_\-+=<>.?/~`]{8,30}$"
              title="Password must be 8 to 30 characters and include uppercase, lowercase, a number, and a special character" required
             oninput="validatePassword(); validateConfirmPassword()"
