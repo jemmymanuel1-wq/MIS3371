@@ -37,7 +37,13 @@ Description: Patient registration form for John's Medical Patient Portal.
     <tr>
         <td>First Name:</td>
         <td>
-            <input type="text" id="firstName" maxlength="30" pattern="[A-Za-z'-]{1,30}" title="Enter first name (letters only, max 30 characters)" required>
+            <input type="text" 
+                id="firstName" 
+                maxlength="30" 
+                pattern="[A-Za-z'-]{1,30}" 
+                title="Enter first name (letters only, max 30 characters)" required
+                oninput="validateFirstName()"
+                onblur="validateFirstName()">
         <br>
 
         <span id="firstNameError" class="error"></span>
@@ -45,7 +51,13 @@ Description: Patient registration form for John's Medical Patient Portal.
 
         <td>Middle Initial:</td>
         <td>
-            <input type="text" id="middleInitial" maxlength="1" pattern="[A-Za-z]" title="Middle initial (optional, one letter only)" required>
+            <input type="text" 
+                id="middleInitial" 
+                maxlength="1" 
+                pattern="[A-Za-z]" 
+                title="Middle initial (optional, one letter only)" required
+                oninput="validateMiddleInitial()"
+                onblur="validateMiddleInitial()">
           <br>
         <span id="middleInitialError" class="error"></span>
         </td>
@@ -54,7 +66,13 @@ Description: Patient registration form for John's Medical Patient Portal.
     <tr>
         <td>Last Name:</td>
         <td>
-            <input type="text" id="lastName" maxlength="30" pattern="[A-Za-z'-]{1,30}" title="Enter last name (letters only, max 30 characters)" required>
+            <input type="text" 
+                id="lastName" 
+                maxlength="30" 
+                pattern="[A-Za-z'-]{1,30}" 
+                title="Enter last name (letters only, max 30 characters)" required
+                oninput="validateLastName()"
+                onblur="validateLastName()">>
         <br>
         <span id="lastNameError" class="error"></span>
         </td>
