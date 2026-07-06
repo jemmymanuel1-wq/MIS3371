@@ -241,7 +241,7 @@ Description: Patient registration form for John's Medical Patient Portal.
             maxlength="20" 
             pattern="^[A-Za-z][A-Za-z0-9_-]{4,29}$" 
             title="Create a user ID using letters, numbers, underscores, or dashes. No spaces." required
-            oninput="validateUserID()"
+            oninput="validateUserID() validatePassword()"
             onblur="validateUserID()">
     <br>
     <span id="userIDError" class="error"></span>
@@ -251,7 +251,16 @@ Description: Patient registration form for John's Medical Patient Portal.
 <tr>
     <td>Phone Number:</td>
     <td>
-        <input type="tel" id="phone" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Enter your phone number in the format 123-456-7890" required>
+        <input type="tel" 
+            id="phone" 
+            placeholder="123-456-7890" 
+            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" 
+            title="Enter your phone number in the format 123-456-7890" required
+            oninput="validatePhone()"
+            onblur="validatePhone()">
+
+        <br>
+        <span id="phoneError" class="error"></span>
     </td>
     <td></td>
     <td></td>
@@ -319,17 +328,26 @@ Description: Patient registration form for John's Medical Patient Portal.
 <tr>
     <td>Password:</td>
     <td>
-        <input type="password" id="password" maxlength="20" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_\-+=<>.?/~`])[A-Za-z\d!@#$%^&*()_\-+=<>.?/~`]{8,30}$"
-     title="Password must be 8 to 30 characters and include uppercase, lowercase, a number, and a special character"
-     required>
+        <input type="password" 
+            id="password" 
+            maxlength="20" 
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_\-+=<>.?/~`])[A-Za-z\d!@#$%^&*()_\-+=<>.?/~`]{8,30}$"
+             title="Password must be 8 to 30 characters and include uppercase, lowercase, a number, and a special character" required
+            oninput="validatePassword(); validateConfirmPassword()"
+            onblur="validatePassword()">
     <br>
      <span id="passwordError" class="error"></span>
     </td>
 
     <td>Confirm Password:</td>
     <td>
-        <input type="password" id="confirmPassword" maxlength="20" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_\-+=<>.?/~`])[A-Za-z\d!@#$%^&*()_\-+=<>.?/~`]{8,30}$"
-     title="Re-enter your password exactly as entered above" required>
+        <input type="password" 
+            id="confirmPassword" 
+            maxlength="20" 
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_\-+=<>.?/~`])[A-Za-z\d!@#$%^&*()_\-+=<>.?/~`]{8,30}$"
+             title="Re-enter your password exactly as entered above" required
+            oninput="validateConfirmPassword()"
+            onblur="validateConfirmPassword()">
     <br>
     <span id="confirmPasswordError" class="error"></span>
     </td>
