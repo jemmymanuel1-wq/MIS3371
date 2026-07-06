@@ -71,3 +71,10 @@ textarea {
     padding: 6px;
     box-sizing: border-box;
 }
+
+.error {
+    color: red;
+    font-size: 12px;
+    display: inline-block;
+    min-height: 18px;
+}
