@@ -295,6 +295,18 @@ function validatePhone() {
     return true;
 }
 
+function validateState() {
+    let state = document.getElementById("state").value;
+
+    if (state === "") {
+        showError("stateError", "Please select a state.");
+        return false;
+    }
+
+    clearError("stateError");
+    return true;
+}
+
 function validateForm() {
 
     let ok =
@@ -310,7 +322,8 @@ function validateForm() {
         validateCity() &
         validateZipCode() &
         validateEmail() &
-        validatePhone();
+        validatePhone() &
+        validateState();
 
     if (Object.keys(formErrors).length === 0) {
         document.getElementById("submitBtn").style.display = "inline-block";
