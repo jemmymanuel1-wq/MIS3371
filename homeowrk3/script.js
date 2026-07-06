@@ -75,6 +75,33 @@ function validateMiddleInitial() {
     return true;
 }
 
+function validateDOB() {
+    let dobValue = document.getElementById("dob").value;
+
+    if (!dobValue) {
+        showError("dobError", "Date of birth is required.");
+        return false;
+    }
+
+    let dob = new Date(dobValue);
+    let today = new Date();
+
+    let age = today.getFullYear() - dob.getFullYear();
+
+    let monthDiff = today.getMonth() - dob.getMonth();
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {
+        age--;
+    }
+
+    if (age < 0 || age > 120) {
+        showError("dobError", "Age must be between 0 and 120 years.");
+        return false;
+    }
+
+    clearError("dobError");
+    return true;
+}
+
 function reviewForm() {
 
     let first = document.getElementById("firstName").value;
