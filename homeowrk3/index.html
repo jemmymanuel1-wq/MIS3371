@@ -211,7 +211,13 @@ Description: Patient registration form for John's Medical Patient Portal.
 
     <td>User ID:</td>
     <td>
-        <input type="text" id="userID" maxlength="20" pattern="^[A-Za-z][A-Za-z0-9_-]{4,29}$" title="Create a user ID using letters, numbers, underscores, or dashes. No spaces." required>
+        <input type="text" 
+            id="userID" 
+            maxlength="20" 
+            pattern="^[A-Za-z][A-Za-z0-9_-]{4,29}$" 
+            title="Create a user ID using letters, numbers, underscores, or dashes. No spaces." required
+            oninput="validateUserID()"
+            onblur="validateUserID()">
     <br>
     <span id="userIDError" class="error"></span>
     </td>
