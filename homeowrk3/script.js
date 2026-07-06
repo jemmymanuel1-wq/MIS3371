@@ -307,6 +307,23 @@ function validateState() {
     return true;
 }
 
+function validateAddress2() {
+    let value = document.getElementById("address2").value.trim();
+
+    if (value === "") {
+        clearError("address2Error");
+        return true;
+    }
+
+    if (value.length < 2 || value.length > 30) {
+        showError("address2Error", "Address Line 2 must be between 2 and 30 characters.");
+        return false;
+    }
+
+    clearError("address2Error");
+    return true;
+}
+
 function validateForm() {
 
     let ok =
@@ -317,13 +334,14 @@ function validateForm() {
         validateSSN() &
         validateUserID() &
         validatePassword() &
-        validateConfirmPassword()
+        validateConfirmPassword() &
         validateAddress1() &
         validateCity() &
         validateZipCode() &
         validateEmail() &
         validatePhone() &
-        validateState();
+        validateState() &
+        validateAddress2();
 
     if (Object.keys(formErrors).length === 0) {
         document.getElementById("submitBtn").style.display = "inline-block";
