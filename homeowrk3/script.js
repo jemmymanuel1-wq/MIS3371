@@ -281,6 +281,20 @@ function updateHealthValue() {
     document.getElementById("healthValue").textContent = value;
 }
 
+function validatePhone() {
+    let phone = document.getElementById("phone").value.trim();
+
+    let regex = /^\d{3}-\d{3}-\d{4}$/;
+
+    if (!regex.test(phone)) {
+        showError("phoneError", "Phone number must be in the format 123-456-7890.");
+        return false;
+    }
+
+    clearError("phoneError");
+    return true;
+}
+
 function validateForm() {
 
     let ok =
@@ -295,7 +309,8 @@ function validateForm() {
         validateAddress1() &
         validateCity() &
         validateZipCode() &
-        validateEmail();
+        validateEmail() &
+        validatePhone();
 
     if (Object.keys(formErrors).length === 0) {
         document.getElementById("submitBtn").style.display = "inline-block";
