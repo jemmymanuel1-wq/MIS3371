@@ -219,6 +219,61 @@ function validateConfirmPassword() {
     return true;
 }
 
+function validateAddress1() {
+    let value = document.getElementById("address1").value.trim();
+
+    if (value.length < 2 || value.length > 30) {
+        showError("address1Error", "Address must be between 2 and 30 characters.");
+        return false;
+    }
+
+    clearError("address1Error");
+    return true;
+}
+function validateCity() {
+    let value = document.getElementById("city").value.trim();
+
+    let regex = /^[A-Za-z ]{2,30}$/;
+
+    if (!regex.test(value)) {
+        showError("cityError", "City must contain only letters and be 2–30 characters.");
+        return false;
+    }
+
+    clearError("cityError");
+    return true;
+}
+
+function validateZipCode() {
+    let value = document.getElementById("zipCode").value.trim();
+
+    let regex = /^\d{5}$/;
+
+    if (!regex.test(value)) {
+        showError("zipCodeError", "ZIP Code must be exactly 5 digits.");
+        return false;
+    }
+
+    clearError("zipCodeError");
+    return true;
+}
+
+function validateEmail() {
+    let email = document.getElementById("email");
+
+    email.value = email.value.toLowerCase();
+
+    let regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!regex.test(email.value)) {
+        showError("emailError", "Enter a valid email address.");
+        return false;
+    }
+
+    clearError("emailError");
+    return true;
+}
+
 function validateForm() {
 
     let ok =
@@ -229,7 +284,11 @@ function validateForm() {
         validateSSN() &
         validateUserID() &
         validatePassword() &
-        validateConfirmPassword();
+        validateConfirmPassword()
+        validateAddress1() &
+        validateCity() &
+        validateZipCode() &
+        validateEmail();
 
     if (Object.keys(formErrors).length === 0) {
         document.getElementById("submitBtn").style.display = "inline-block";
