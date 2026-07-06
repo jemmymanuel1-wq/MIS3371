@@ -8,6 +8,73 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
+let formErrors = {};
+
+function showError(id, message) {
+    document.getElementById(id).innerHTML = message;
+    formErrors[id] = true;
+}
+
+function clearError(id) {
+    document.getElementById(id).innerHTML = "";
+    delete formErrors[id];
+}
+
+function validateFirstName() {
+    let value = document.getElementById("firstName").value;
+
+    let regex = /^[A-Za-z'-]{1,30}$/;
+
+    if (value === "") {
+        showError("firstNameError", "First name is required.");
+        return false;
+    }
+
+    if (!regex.test(value)) {
+        showError("firstNameError", "Only letters, apostrophes, and dashes allowed.");
+        return false;
+    }
+
+    clearError("firstNameError");
+    return true;
+}
+function validateLastName() {
+    let value = document.getElementById("lastName").value;
+
+    let regex = /^[A-Za-z'-]{1,30}$/;
+
+    if (value === "") {
+        showError("lastNameError", "Last name is required.");
+        return false;
+    }
+
+    if (!regex.test(value)) {
+        showError("lastNameError", "Only letters, apostrophes, and dashes allowed.");
+        return false;
+    }
+
+    clearError("lastNameError");
+    return true;
+}
+function validateMiddleInitial() {
+    let value = document.getElementById("middleInitial").value;
+
+    if (value === "") {
+        clearError("middleInitialError");
+        return true; // optional field
+    }
+
+    let regex = /^[A-Za-z]$/;
+
+    if (!regex.test(value)) {
+        showError("middleInitialError", "Must be a single letter.");
+        return false;
+    }
+
+    clearError("middleInitialError");
+    return true;
+}
+
 function reviewForm() {
 
     let first = document.getElementById("firstName").value;
