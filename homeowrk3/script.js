@@ -102,6 +102,33 @@ function validateDOB() {
     return true;
 }
 
+function formatSSN() {
+    let input = document.getElementById("ssn");
+
+    let value = input.value.replace(/\D/g, ""); // remove non-digits
+
+    if (value.length > 9) {
+        value = value.substring(0, 9);
+    }
+
+    let formatted = value;
+
+    if (value.length > 3) {
+        formatted = value.substring(0, 3) + "-" + value.substring(3);
+    }
+
+    if (value.length > 5) {
+        formatted =
+            value.substring(0, 3) +
+            "-" +
+            value.substring(3, 5) +
+            "-" +
+            value.substring(5);
+    }
+
+    input.value = formatted;
+}
+
 function reviewForm() {
 
     let first = document.getElementById("firstName").value;
