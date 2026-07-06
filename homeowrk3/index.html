@@ -124,7 +124,15 @@ Description: Patient registration form for John's Medical Patient Portal.
 
     <td>Address Line 2:</td>
     <td>
-        <input type="text" id="address2" maxlength="30" title="Apartment, suite, unit, or building number (optional)">
+        <input type="text" 
+            id="address2" 
+            maxlength="30" 
+            title="Apartment, suite, unit, or building number (optional)"
+            oninput="validateAddress2()"
+            onblur="validateAddress2()">
+
+        <br>
+    <span id="address2Error" class="error"></span>
     </td>
 </tr>
 
