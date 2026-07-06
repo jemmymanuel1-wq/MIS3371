@@ -1,0 +1,73 @@
+/*
+Program Name: style.css
+Author: Jemimah Emmanuel
+Date Created: 06/17/2026
+Description: The styling for the patient registration form
+*/
+
+/* Background*/
+body{
+  background-color: #f2f6ff;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  paddings: 0;
+}
+
+#content {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Banner styling */
+#banner {
+    background-color: #0b3d91;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Main heading */
+h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+/* Date text */
+#date {
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+/* General form spacing (we'll use later) */
+table {
+    width: 70%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+
+
+td {
+    padding: 10px;
+    vertical-align: middle;
+}
+
+td:first-child,
+td:nth-child(3) {
+    width: 180px;
+    font-weight: bold;
+    text-align: left;
+}
+
+td:nth-child(2),
+td:nth-child(4) {
+    width: 220px;
+}
+
+input,
+select,
+textarea {
+    padding: 6px;
+    box-sizing: border-box;
+}
