@@ -55,7 +55,7 @@ Description: Patient registration form for John's Medical Patient Portal.
                 id="middleInitial" 
                 maxlength="1" 
                 pattern="[A-Za-z]" 
-                title="Middle initial (optional, one letter only)" required
+                title="Middle initial (optional, one letter only)" 
                 oninput="validateMiddleInitial()"
                 onblur="validateMiddleInitial()">
           <br>
@@ -72,7 +72,7 @@ Description: Patient registration form for John's Medical Patient Portal.
                 pattern="[A-Za-z'-]{1,30}" 
                 title="Enter last name (letters only, max 30 characters)" required
                 oninput="validateLastName()"
-                onblur="validateLastName()">>
+                onblur="validateLastName()">
         <br>
         <span id="lastNameError" class="error"></span>
         </td>
@@ -101,7 +101,8 @@ Description: Patient registration form for John's Medical Patient Portal.
                 id="ssn" 
                 maxlength="11" 
                 title="Enter your Social Security Number in the format XXX-XX-XXXX"
-                oninput="formatSSN()">
+                oninput="formatSSN(); validateSSN()"
+                onblur= "validateSSN">
        <br>
     <span id="ssnError" class="error"></span>
     </td>
@@ -110,7 +111,13 @@ Description: Patient registration form for John's Medical Patient Portal.
 <tr>
     <td>Address Line 1:</td>
     <td>
-        <input type="text" id="address1" minlength="2" maxlength="30" title="Enter your street address" required>
+        <input type="text" 
+            id="address1" 
+            minlength="2" 
+            maxlength="30" 
+            title="Enter your street address" required
+            oninput="validateAddress1()"
+            onblur="validateAddress1()">
     <br>
     <span id="address1Error" class="error"></span>
     </td>
@@ -124,7 +131,13 @@ Description: Patient registration form for John's Medical Patient Portal.
 <tr>
     <td>City:</td>
     <td>
-        <input type="text" id="city" minlength="2" maxlength="30" title="Enter your city" required>
+        <input type="text" 
+            id="city" 
+            minlength="2" 
+            maxlength="30" 
+            title="Enter your city" required
+            oninput="validateCity()"
+            onblur="validateCity()">
     <br>
     <span id="cityError" class="error"></span>
     </td>
@@ -192,7 +205,13 @@ Description: Patient registration form for John's Medical Patient Portal.
 <tr>
     <td>Zip Code:</td>
     <td>
-        <input type="text" id="zipCode" maxlength="10" pattern="[0-9]{5}(-[0-9]{4})?" title="Enter a 5-digit ZIP code or ZIP+4" required>
+        <input type="text"
+            id="zipCode" 
+            maxlength="10" 
+            pattern="[0-9]{5}(-[0-9]{4})?" 
+            title="Enter a 5-digit ZIP code or ZIP+4" required
+            oninput="validateZipCode()"
+            onblur="validateZipCode()">
     <br>
     <span id="zipCodeError" class="error"></span>
     </td>
@@ -204,7 +223,13 @@ Description: Patient registration form for John's Medical Patient Portal.
 <tr>
     <td>Email:</td>
     <td>
-        <input type="email" id="email" placeholder="name@example.com" pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" title="Enter a valid email address (example: name@example.com)" required>
+        <input type="email" 
+            id="email" 
+            placeholder="name@example.com" 
+            pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" 
+            title="Enter a valid email address (example: name@example.com)" required
+            oninput="validateEmail()"
+            onblur="validateEmail()">
     <br>
     <span id="emailError" class="error"></span>
     </td>
