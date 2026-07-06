@@ -144,7 +144,11 @@ Description: Patient registration form for John's Medical Patient Portal.
 
     <td>State:</td>
     <td>
-        <select id="state" required title="Select your state of residence">
+        <select id="state" 
+            required title="Select your state of residence"
+            oninput="validteState()"
+            onblur="validateState()">
+            
             <option value="">Select State</option>
             <option>Alabama</option>
             <option>Alaska</option>
@@ -199,6 +203,9 @@ Description: Patient registration form for John's Medical Patient Portal.
             <option>Wisconsin</option>
             <option>Wyoming</option>
         </select>
+
+        <br>
+        <span id="stateError" class="error"></span>
     </td>
 </tr>
 
