@@ -143,6 +143,24 @@ function validateSSN() {
     return true;
 }
 
+function validateUserID() {
+    let id = document.getElementById("userID").value;
+
+    let regex = /^[A-Za-z][A-Za-z0-9_-]{4,19}$/;
+
+    if (id === "") {
+        showError("userIDError", "User ID is required.");
+        return false;
+    }
+
+    if (!regex.test(id)) {
+        showError("userIDError", "5–20 chars, must start with a letter, no spaces or special symbols.");
+        return false;
+    }
+
+    clearError("userIDError");
+    return true;
+}
 function reviewForm() {
 
     let first = document.getElementById("firstName").value;
