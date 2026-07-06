@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.getElementById("date").innerHTML =
         "Today is: " + today.toDateString();
+    
+    updatedHealthValue();
 
 });
 
@@ -272,6 +274,11 @@ function validateEmail() {
 
     clearError("emailError");
     return true;
+}
+
+function updateHealthValue() {
+    let value = document.getElementById("healthRating").value;
+    document.getElementById("healthValue").textContent = value;
 }
 
 function validateForm() {
