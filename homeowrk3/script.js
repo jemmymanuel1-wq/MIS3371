@@ -129,6 +129,20 @@ function formatSSN() {
     input.value = formatted;
 }
 
+function validateSSN() {
+    let ssn = document.getElementById("ssn").value;
+
+    let regex = /^\d{3}-\d{2}-\d{4}$/;
+
+    if (!regex.test(ssn)) {
+        showError("ssnError", "SSN must be in format XXX-XX-XXXX.");
+        return false;
+    }
+
+    clearError("ssnError");
+    return true;
+}
+
 function reviewForm() {
 
     let first = document.getElementById("firstName").value;
