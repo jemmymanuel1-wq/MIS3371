@@ -38,18 +38,25 @@ Description: Patient registration form for John's Medical Patient Portal.
         <td>First Name:</td>
         <td>
             <input type="text" id="firstName" maxlength="30" pattern="[A-Za-z'-]{1,30}" title="Enter first name (letters only, max 30 characters)" required>
+        <br>
+
+        <span id="firstNameError" class="error"></span>
         </td>
 
         <td>Middle Initial:</td>
         <td>
-            <input type="text" id="middleInitial" maxlength="1" pattern="[A-Za-z]" title="Middle initial (1 letter only)" required>
+            <input type="text" id="middleInitial" maxlength="1" pattern="[A-Za-z]" title="Middle initial (optional, one letter only)" required>
+          <br>
+        <span id="middleInitialError" class="error"></span>
         </td>
     </tr>
 
     <tr>
         <td>Last Name:</td>
         <td>
-            <input type="text" id="lastName" maxlength="30" pattern="[A-Za-z0-9'-]{1,30}" title="Enter last name (letters only, max 30 characters)" required>
+            <input type="text" id="lastName" maxlength="30" pattern="[A-Za-z'-]{1,30}" title="Enter last name (letters only, max 30 characters)" required>
+        <br>
+        <span id="lastNameError" class="error"></span>
         </td>
 
         <td></td>
@@ -60,22 +67,29 @@ Description: Patient registration form for John's Medical Patient Portal.
     <td>Date of Birth:</td>
     <td>
         <input type="date" id="dob" min="1906-01-01" max="2026-06-28" title="Select your date of birth" required>
+   <br>
+    <span id="dobError" class="error"></span>
     </td>
 
     <td>SSN:</td>
     <td>
         <input type="password" id="ssn" maxlength="11" title="Enter your Social Security Number in the format XXX-XX-XXXX">
+       <br>
+    <span id="ssnError" class="error"></span>
     </td>
 </tr>
-    <tr>
+    
+<tr>
     <td>Address Line 1:</td>
     <td>
         <input type="text" id="address1" minlength="2" maxlength="30" title="Enter your street address" required>
+    <br>
+    <span id="address1Error" class="error"></span>
     </td>
 
     <td>Address Line 2:</td>
     <td>
-        <input type="text" id="address2" maxlength="30" title="Apartment, suite, unit, or building number (optional)>
+        <input type="text" id="address2" maxlength="30" title="Apartment, suite, unit, or building number (optional)">
     </td>
 </tr>
 
@@ -83,6 +97,8 @@ Description: Patient registration form for John's Medical Patient Portal.
     <td>City:</td>
     <td>
         <input type="text" id="city" minlength="2" maxlength="30" title="Enter your city" required>
+    <br>
+    <span id="cityError" class="error"></span>
     </td>
 
     <td>State:</td>
@@ -97,6 +113,7 @@ Description: Patient registration form for John's Medical Patient Portal.
             <option>Colorado</option>
             <option>Connecticut</option>
             <option>Delaware</option>
+            <option>District of Columbia</option>
             <option>Florida</option>
             <option>Georgia</option>
             <option>Hawaii</option>
@@ -127,6 +144,7 @@ Description: Patient registration form for John's Medical Patient Portal.
             <option>Oklahoma</option>
             <option>Oregon</option>
             <option>Pennsylvania</option>
+            <option>Puerto Rico</option>
             <option>Rhode Island</option>
             <option>South Carolina</option>
             <option>South Dakota</option>
@@ -147,23 +165,30 @@ Description: Patient registration form for John's Medical Patient Portal.
     <td>Zip Code:</td>
     <td>
         <input type="text" id="zipCode" maxlength="10" pattern="[0-9]{5}(-[0-9]{4})?" title="Enter a 5-digit ZIP code or ZIP+4" required>
+    <br>
+    <span id="zipCodeError" class="error"></span>
     </td>
 
     <td></td>
     <td></td>
 </tr>
 
-    <tr>
+<tr>
     <td>Email:</td>
     <td>
         <input type="email" id="email" placeholder="name@example.com" pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" title="Enter a valid email address (example: name@example.com)" required>
+    <br>
+    <span id="emailError" class="error"></span>
     </td>
 
     <td>User ID:</td>
     <td>
         <input type="text" id="userID" maxlength="20" pattern="^[A-Za-z][A-Za-z0-9_-]{4,29}$" title="Create a user ID using letters, numbers, underscores, or dashes. No spaces." required>
+    <br>
+    <span id="userIDError" class="error"></span>
     </td>
 </tr>
+    
 <tr>
     <td>Phone Number:</td>
     <td>
@@ -172,14 +197,15 @@ Description: Patient registration form for John's Medical Patient Portal.
     <td></td>
     <td></td>
 </tr>
-    <tr>
+    
+<tr>
     <td>Symptoms / Description:</td>
     <td colspan="3">
         <textarea id="symptoms" rows="4" cols="50" placeholder="Describe your symptoms here..."></textarea>
     </td>
 </tr>
 
-    <tr>
+<tr>
     <td>Medical History (Check all that apply):</td>
     <td colspan="3">
 
@@ -192,7 +218,7 @@ Description: Patient registration form for John's Medical Patient Portal.
     </td>
 </tr>
 
-    <tr>
+<tr>
     <td>Gender:</td>
     <td colspan="3">
         <input type="radio" id="male" name="gender" value="Male" title="Select Male" > Male
@@ -216,34 +242,48 @@ Description: Patient registration form for John's Medical Patient Portal.
         <input type="radio" id="insNo" name="insurance" value="No"> No
     </td>
 </tr>
-
-    <tr>
+ 
+<tr>
     <td>How would you rate your current health (1-10):</td>
     <td colspan="3">
         <input type="range" id="healthRating" min="1" max="10" value="5" title="Drag the slider to rate your current health from 1 to 10" >
+    <span id="healthValue">5</span>
     </td>
 </tr>
 
-    <tr>
+<tr>
     <td>Password:</td>
     <td>
         <input type="password" id="password" maxlength="20" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_\-+=<>.?/~`])[A-Za-z\d!@#$%^&*()_\-+=<>.?/~`]{8,30}$"
- title="Password must be 8 to 30 characters and include uppercase, lowercase, a number, and a special character"
- required>
+     title="Password must be 8 to 30 characters and include uppercase, lowercase, a number, and a special character"
+     required>
+    <br>
+     <span id="passwordError" class="error"></span>
     </td>
 
     <td>Confirm Password:</td>
     <td>
         <input type="password" id="confirmPassword" maxlength="20" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_\-+=<>.?/~`])[A-Za-z\d!@#$%^&*()_\-+=<>.?/~`]{8,30}$"
- title="Re-enter your password exactly as entered above" required>
+     title="Re-enter your password exactly as entered above" required>
+    <br>
+    <span id="confirmPasswordError" class="error"></span>
     </td>
 </tr>
-    <tr>
+    
+<tr>
     <td colspan="4" style="text-align:center; padding-top:10px;">
 
         <input type="reset" value="CLEAR AND START OVER">
         <input type="button" value="REVIEW" onclick="reviewForm()">
-        <input type="submit" value="SUBMIT">
+        <input type="button"
+       id="validateBtn"
+       value="VALIDATE"
+       onclick="validateForm()">
+
+    <input type="submit"
+       id="submitBtn"
+       value="SUBMIT"
+       style="display:none;">
 
     </td>
 </tr>
