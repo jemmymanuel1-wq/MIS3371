@@ -7,8 +7,34 @@ document.addEventListener("DOMContentLoaded", function () {
         "Today is: " + today.toDateString();
     
     updatedHealthValue();
-
+    loadStates();
 });
+
+async function loadStates() {
+
+    try {
+        const response = await fetch("states.txt");
+
+        if (!response.ok) {
+            throw new Error("Unable to load states.");
+        }
+
+        const data = await response.text();
+        const states = data.trim().split("\n");
+
+        const stateSelect = document.getElementById("state");
+
+        states.forEach(function (state) {
+            const option = document.createElement("option");
+            option.value = state.trim();
+            option.textContent = state.trim();
+            stateSelect.appendChild(option);
+        });
+
+    } catch (error) {
+        console.error("Error loading states:", error);
+    }
+}
 
 let formErrors = {};
 
