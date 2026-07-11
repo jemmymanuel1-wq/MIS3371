@@ -106,3 +106,15 @@ textarea {
     text-align: center;
     padding: 10px;
 }
+
+#welcomeMessage {
+    text-align: center;
+    background-color: white;
+    color: #0b3d91;
+    padding: 10px;
+    font-weight: bold;
+}
+
+#welcomeMessage a {
+    color: #b22222;
+}
