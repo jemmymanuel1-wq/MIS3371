@@ -392,7 +392,13 @@ return ok;
 function reviewForm() {
 
     let first = document.getElementById("firstName").value;
+
+if (document.getElementById("rememberMe").checked) {
     setFirstNameCookie(first);
+} else {
+    deleteFirstNameCookie();
+    localStorage.removeItem("patientFormData");
+}
     let middle = document.getElementById("middleInitial").value;
     let last = document.getElementById("lastName").value;
 
