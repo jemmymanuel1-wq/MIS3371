@@ -524,7 +524,10 @@ function saveFormData() {
 
 function startNewUser() {
     deleteFirstNameCookie();
-    document.getElementById("firstName").value = "";
+    localStorage.removeItem("patientFormData");
+
+    document.querySelector("form").reset();
+    updateHealthValue();
     displayWelcomeMessage();
 }
 
