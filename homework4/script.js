@@ -37,6 +37,8 @@ async function loadStates() {
             stateSelect.appendChild(option);
         });
 
+        loadFormData();
+        
     } catch (error) {
         console.error("Error loading states:", error);
     }
