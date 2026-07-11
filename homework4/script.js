@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
     updateHealthValue();
     loadStates();
+    displayWelcomeMessage();
 });
 
 async function loadStates() {
@@ -451,4 +452,21 @@ function getFirstNameCookie() {
 function deleteFirstNameCookie() {
     document.cookie =
         "firstName=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+}
+
+function displayWelcomeMessage() {
+    const firstName = getFirstNameCookie();
+    const welcomeMessage = document.getElementById("welcomeMessage");
+
+    if (firstName !== "") {
+        welcomeMessage.innerHTML =
+            "Welcome back, " + firstName +
+            "! Not " + firstName +
+            '? <a href="#" onclick="startNewUser()">Click here to start as a new user.</a>';
+
+        document.getElementById("firstName").value = firstName;
+
+    } else {
+        welcomeMessage.innerHTML = "Welcome New User";
+    }
 }
