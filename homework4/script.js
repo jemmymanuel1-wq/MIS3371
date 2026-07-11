@@ -480,6 +480,14 @@ function displayWelcomeMessage() {
 }
 
 function saveFormData() {
+
+        const rememberMe = document.getElementById("rememberMe");
+
+    if (!rememberMe.checked) {
+        localStorage.removeItem("patientFormData");
+        deleteFirstNameCookie();
+        return;
+    }
     const formData = {
         firstName: document.getElementById("firstName").value,
         middleInitial: document.getElementById("middleInitial").value,
