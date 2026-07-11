@@ -471,3 +471,9 @@ function displayWelcomeMessage() {
         welcomeMessage.innerHTML = "Welcome New User";
     }
 }
+
+function startNewUser() {
+    deleteFirstNameCookie();
+    document.getElementById("firstName").value = "";
+    displayWelcomeMessage();
+}
