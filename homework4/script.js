@@ -473,11 +473,12 @@ function displayWelcomeMessage() {
     const welcomeMessage = document.getElementById("welcomeMessage");
 
     if (firstName !== "") {
-        welcomeMessage.innerHTML =
-            "Welcome back, " + firstName +
-            "! Not " + firstName +
-            '? <a href="#" onclick="startNewUser()">Click here to start as a new user.</a>';
-
+       welcomeMessage.innerHTML =
+    "Welcome back, " + firstName +
+    "! Not " + firstName + "? " +
+    '<input type="checkbox" id="newUserCheckbox" onchange="startNewUser()"> ' +
+    "Check here to start as a new user.";
+        
         document.getElementById("firstName").value = firstName;
 
     } else {
