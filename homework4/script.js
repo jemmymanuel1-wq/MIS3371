@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("date").innerHTML =
         "Today is: " + today.toDateString();
     
-    updatedHealthValue();
+    updateHealthValue();
     loadStates();
 });
 
