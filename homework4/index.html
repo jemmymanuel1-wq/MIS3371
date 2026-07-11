@@ -102,7 +102,7 @@ Description: Patient registration form for John's Medical Patient Portal.
                 maxlength="11" 
                 title="Enter your Social Security Number in the format XXX-XX-XXXX"
                 oninput="formatSSN(); validateSSN()"
-                onblur= "validateSSN">
+                onblur= "validateSSN()">
        <br>
     <span id="ssnError" class="error"></span>
     </td>
@@ -154,7 +154,7 @@ Description: Patient registration form for John's Medical Patient Portal.
     <td>
         <select id="state" 
             required title="Select your state of residence"
-            oninput="validteState()"
+            oninput="validateState()"
             onblur="validateState()">
             
             <option value="">Select State</option>
@@ -240,6 +240,7 @@ Description: Patient registration form for John's Medical Patient Portal.
     <td>
         <input type="email" 
             id="email" 
+            maxlength="50"
             placeholder="name@example.com" 
             pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" 
             title="Enter a valid email address (example: name@example.com)" required
@@ -253,10 +254,11 @@ Description: Patient registration form for John's Medical Patient Portal.
     <td>
         <input type="text" 
             id="userID" 
+            minlength="5"
             maxlength="20" 
             pattern="^[A-Za-z][A-Za-z0-9_-]{4,19}$" 
             title="Create a user ID using letters, numbers, underscores, or dashes. No spaces." required
-            oninput="validateUserID() validatePassword()"
+            oninput="validateUserID(); validatePassword()"
             onblur="validateUserID()">
     <br>
     <span id="userIDError" class="error"></span>
@@ -335,7 +337,7 @@ Description: Patient registration form for John's Medical Patient Portal.
             max="10" 
             value="5" 
             title="Drag the slider to rate your current health from 1 to 10"
-            oninput="updateHealthValue">
+            oninput="updateHealthValue()">
     <span id="healthValue">5</span>
     </td>
 </tr>
