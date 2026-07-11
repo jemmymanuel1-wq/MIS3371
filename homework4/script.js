@@ -9,6 +9,11 @@ document.addEventListener("DOMContentLoaded", function () {
     updateHealthValue();
     loadStates();
     displayWelcomeMessage();
+
+    document.querySelectorAll("input, select, textarea").forEach(function (field) {
+    field.addEventListener("change", saveFormData);
+    field.addEventListener("blur", saveFormData);
+});
 });
 
 async function loadStates() {
@@ -487,7 +492,15 @@ function saveFormData() {
         phone: document.getElementById("phone").value,
         userID: document.getElementById("userID").value,
         symptoms: document.getElementById("symptoms").value,
-        healthRating: document.getElementById("healthRating").value
+        healthRating: document.getElementById("healthRating").value,
+        gender: document.querySelector('input[name="gender"]:checked')?.value || "",
+        vaccine: document.querySelector('input[name="vaccine"]:checked')?.value || "",
+        insurance: document.querySelector('input[name="insurance"]:checked')?.value || "",
+        diabetes: document.getElementById("diabetes").checked,
+        highBP: document.getElementById("highBP").checked,
+        asthma: document.getElementById("asthma").checked,
+        heartDisease: document.getElementById("heartDisease").checked,
+        allergies: document.getElementById("allergies").checked
     };
 
     localStorage.setItem("patientFormData", JSON.stringify(formData));
