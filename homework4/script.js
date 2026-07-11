@@ -385,6 +385,7 @@ return ok;
 function reviewForm() {
 
     let first = document.getElementById("firstName").value;
+    setFirstNameCookie(first);
     let middle = document.getElementById("middleInitial").value;
     let last = document.getElementById("lastName").value;
 
