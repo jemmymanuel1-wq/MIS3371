@@ -118,3 +118,7 @@ textarea {
 #welcomeMessage a {
     color: #b22222;
 }
+
+#submitBtn {
+    display: none;
+}
