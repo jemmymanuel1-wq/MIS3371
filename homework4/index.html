@@ -300,6 +300,7 @@ Description: Patient registration form for John's Medical Patient Portal.
     <td>
         <input type="password" 
             id="password" 
+            minlength="8"
             maxlength="30" 
             pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_\-+=<>.?/~`])[A-Za-z\d!@#$%^&*()_\-+=<>.?/~`]{8,30}$"
              title="Password must be 8 to 30 characters and include uppercase, lowercase, a number, and a special character" required
@@ -313,6 +314,7 @@ Description: Patient registration form for John's Medical Patient Portal.
     <td>
         <input type="password" 
             id="confirmPassword" 
+            minlength="8"
             maxlength="20" 
             pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_\-+=<>.?/~`])[A-Za-z\d!@#$%^&*()_\-+=<>.?/~`]{8,30}$"
              title="Re-enter your password exactly as entered above" required
