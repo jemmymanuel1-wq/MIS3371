@@ -423,3 +423,32 @@ function reviewForm() {
         
         "<p><strong>Password Check:</strong> " + pwMessage + "</p>";
 }
+
+function setFirstNameCookie(firstName) {
+    const expires = new Date();
+    expires.setTime(expires.getTime() + (48 * 60 * 60 * 1000));
+
+    document.cookie =
+        "firstName=" + encodeURIComponent(firstName) +
+        "; expires=" + expires.toUTCString() +
+        "; path=/";
+}
+
+function getFirstNameCookie() {
+    const cookies = document.cookie.split(";");
+
+    for (let cookie of cookies) {
+        cookie = cookie.trim();
+
+        if (cookie.startsWith("firstName=")) {
+            return decodeURIComponent(cookie.substring("firstName=".length));
+        }
+    }
+
+    return "";
+}
+
+function deleteFirstNameCookie() {
+    document.cookie =
+        "firstName=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+}
