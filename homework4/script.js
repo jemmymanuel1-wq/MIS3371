@@ -511,3 +511,56 @@ function startNewUser() {
     document.getElementById("firstName").value = "";
     displayWelcomeMessage();
 }
+
+function loadFormData() {
+    const savedData = localStorage.getItem("patientFormData");
+
+    if (!savedData) {
+        return;
+    }
+
+    const formData = JSON.parse(savedData);
+
+    document.getElementById("firstName").value = formData.firstName || "";
+    document.getElementById("middleInitial").value = formData.middleInitial || "";
+    document.getElementById("lastName").value = formData.lastName || "";
+    document.getElementById("dob").value = formData.dob || "";
+    document.getElementById("address1").value = formData.address1 || "";
+    document.getElementById("address2").value = formData.address2 || "";
+    document.getElementById("city").value = formData.city || "";
+    document.getElementById("zipCode").value = formData.zipCode || "";
+    document.getElementById("email").value = formData.email || "";
+    document.getElementById("phone").value = formData.phone || "";
+    document.getElementById("userID").value = formData.userID || "";
+    document.getElementById("symptoms").value = formData.symptoms || "";
+    document.getElementById("healthRating").value = formData.healthRating || "5";
+
+    if (formData.gender) {
+        const gender = document.querySelector(
+            'input[name="gender"][value="' + formData.gender + '"]'
+        );
+        if (gender) gender.checked = true;
+    }
+
+    if (formData.vaccine) {
+        const vaccine = document.querySelector(
+            'input[name="vaccine"][value="' + formData.vaccine + '"]'
+        );
+        if (vaccine) vaccine.checked = true;
+    }
+
+    if (formData.insurance) {
+        const insurance = document.querySelector(
+            'input[name="insurance"][value="' + formData.insurance + '"]'
+        );
+        if (insurance) insurance.checked = true;
+    }
+
+    document.getElementById("diabetes").checked = formData.diabetes || false;
+    document.getElementById("highBP").checked = formData.highBP || false;
+    document.getElementById("asthma").checked = formData.asthma || false;
+    document.getElementById("heartDisease").checked = formData.heartDisease || false;
+    document.getElementById("allergies").checked = formData.allergies || false;
+
+    updateHealthValue();
+}
