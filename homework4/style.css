@@ -78,3 +78,8 @@ textarea {
     display: inline-block;
     min-height: 18px;
 }
+
+.buttonRow {
+  text-align: center;
+  padding-top: 10px;
+}
