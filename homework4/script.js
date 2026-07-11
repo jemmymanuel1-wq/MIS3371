@@ -472,6 +472,27 @@ function displayWelcomeMessage() {
     }
 }
 
+function saveFormData() {
+    const formData = {
+        firstName: document.getElementById("firstName").value,
+        middleInitial: document.getElementById("middleInitial").value,
+        lastName: document.getElementById("lastName").value,
+        dob: document.getElementById("dob").value,
+        address1: document.getElementById("address1").value,
+        address2: document.getElementById("address2").value,
+        city: document.getElementById("city").value,
+        state: document.getElementById("state").value,
+        zipCode: document.getElementById("zipCode").value,
+        email: document.getElementById("email").value,
+        phone: document.getElementById("phone").value,
+        userID: document.getElementById("userID").value,
+        symptoms: document.getElementById("symptoms").value,
+        healthRating: document.getElementById("healthRating").value
+    };
+
+    localStorage.setItem("patientFormData", JSON.stringify(formData));
+}
+
 function startNewUser() {
     deleteFirstNameCookie();
     document.getElementById("firstName").value = "";
